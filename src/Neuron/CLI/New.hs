@@ -74,7 +74,7 @@ newZettelFile NewCommand {..} = do
       putStrLn $ notesDir </> zettelFile
     -- Like `executeFile` but takes a shell command.
     executeShellCommand cmd =
-      executeFile "bash" True ["-c", cmd] Nothing
+      executeFile "/usr/bin/bash" True ["-c", cmd] Nothing
     getEnvNonEmpty name =
       Env.getEnv name >>= \case
         Nothing -> pure Nothing
